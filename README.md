@@ -1,4 +1,4 @@
-# agent-eval
+# agent-test
 
 Test AI agents before production. Catch tool misuse, policy violations, and safety issues.
 
