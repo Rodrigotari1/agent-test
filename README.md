@@ -229,6 +229,36 @@ test('custom validation', async () => {
 });
 ```
 
+## Adapters
+
+### LangChain
+
+Wrap LangChain agents to use with agent-eval:
+
+```javascript
+const { wrapLangChainAgent, test, runAgent, expect } = require('agent-eval');
+const { AgentExecutor } = require('langchain/agents');
+
+const executor = AgentExecutor.fromAgentAndTools({
+  agent: myAgent,
+  tools: myTools
+});
+
+const wrappedAgent = wrapLangChainAgent(executor);
+
+test('langchain agent uses tools', async () => {
+  await runAgent(wrappedAgent, 'What is the weather?');
+
+  expect().toCallTool('weather');
+  expect().toMention('temperature');
+});
+```
+
+Features:
+- Automatically extracts tool calls from `intermediateSteps`
+- Maps token usage from `llmOutput`
+- Supports both `invoke()` and `call()` methods
+
 ## License
 
 MIT

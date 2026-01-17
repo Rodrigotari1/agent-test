@@ -123,3 +123,4 @@ export function clearTests(): void {
 
 export * from './types';
 export * from './reporter';
+export * from './adapters/langchain';
