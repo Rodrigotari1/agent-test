@@ -1,6 +1,6 @@
 # agent-test
 
-Test AI agents before production. Catch tool misuse, policy violations, and safety issues.
+Test AI agents before production. Catch tool misuse, policy violations, and safety issues. Not yet ready
 
 ```bash
 npm install agent-eval
